@@ -1,12 +1,26 @@
 import axios from 'axios'
 import { DATABASE_ID, NOTION_TOKEN } from '../../config'
+import HeadInfo from '@/components/common/HeadInfo'
+import ProjectsItem from '@/components/project-item'
 
-const Projects = ({ projectNames }: any) => {
-  console.log(projectNames)
+const Projects = ({ projects }: any) => {
+  console.log(projects)
 
   return (
-    <div>
-      <h1>프로젝트 페이지</h1>
+    <div className="bg-gray-200 dark:bg-black">
+      <div className="flex flex-col items-center justify-center min-h-screen mb-10 px-6">
+        <HeadInfo title="Projects" />
+        <h1 className="text-center font-extrabold text-4xl mb-4 mt-4">
+          총 프로젝트:{' '}
+          <span className="text-purple-400">{projects.results.length}개</span>
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-5 sm:w-full">
+          {projects.results.map((project: any) => {
+            return <ProjectsItem key={project.id} data={project} />
+          })}
+        </div>
+      </div>
     </div>
   )
 }
@@ -25,21 +39,18 @@ export async function getStaticProps() {
     data: { page_size: 100 },
   }
 
-  let projectNames
+  let projects
 
   try {
     const response = await axios.request(options)
-    const projects = await response.data
-
-    projectNames = projects.results.map((project: any) => {
-      return project.properties.name.title[0].plain_text
-    })
+    projects = await response.data
+    console.log(projects)
   } catch (error) {
     console.error(error)
   }
 
   return {
-    props: { projectNames },
+    props: { projects },
   }
 }
 

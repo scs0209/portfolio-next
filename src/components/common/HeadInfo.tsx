@@ -3,8 +3,8 @@ import React, { VFC } from 'react'
 
 type HeaderProps = {
   title: string
-  content: string
-  keyword: string
+  content?: string
+  keyword?: string
 }
 
 const HeadInfo: VFC<HeaderProps> = ({ title, content, keyword }) => {
