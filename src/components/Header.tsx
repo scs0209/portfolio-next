@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Link from 'next/link'
 import ToggleBtn from './Toggle-Button'
 
@@ -32,7 +33,7 @@ const Header = () => {
               내 프로젝트
             </Link>
             <Link
-              href="/contacts"
+              href="/contact"
               className="text-white mr-5 hover:text-pink-900 font-bold"
             >
               연락처

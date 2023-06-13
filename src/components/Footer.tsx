@@ -1,3 +1,4 @@
+/* eslint-disable */
 const Footer = () => {
   return (
     <footer className="text-white-600 body-font bg-purple-400">

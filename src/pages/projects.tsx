@@ -1,21 +1,21 @@
 import axios from 'axios'
 import { DATABASE_ID, NOTION_TOKEN } from '../../config'
 import HeadInfo from '@/components/common/HeadInfo'
-import ProjectsItem from '@/components/project-item'
+import ProjectsItem from '@/components/porjects/project-item'
 
 const Projects = ({ projects }: any) => {
   console.log(projects)
 
   return (
     <div className="bg-gray-200 dark:bg-black">
-      <div className="flex flex-col items-center justify-center min-h-screen mb-10 px-6">
+      <div className="flex flex-col items-center justify-center min-h-screen px-6">
         <HeadInfo title="Projects" />
         <h1 className="text-center font-extrabold text-4xl mb-4 mt-4">
           총 프로젝트:{' '}
           <span className="text-purple-400">{projects.results.length}개</span>
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-5 sm:w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-12 m-4 sm:w-full">
           {projects.results.map((project: any) => {
             return <ProjectsItem key={project.id} data={project} />
           })}
