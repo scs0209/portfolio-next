@@ -7,7 +7,7 @@ const Projects = ({ projects }: any) => {
   console.log(projects)
 
   return (
-    <div className="bg-gray-200 dark:bg-black">
+    <div className="bg-gray-200 dark:bg-slate-700">
       <div className="flex flex-col items-center justify-center min-h-screen px-6">
         <HeadInfo title="Projects" />
         <h1 className="text-center font-extrabold text-4xl mb-4 mt-4">

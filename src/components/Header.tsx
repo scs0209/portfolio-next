@@ -5,7 +5,7 @@ import ToggleBtn from './Toggle-Button'
 const Header = () => {
   return (
     <>
-      <header className="bg-purple-400 text-gray-600 body-font">
+      <header className="bg-purple-400 text-gray-600 body-font dark:bg-slate-800">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link
             href="/"
