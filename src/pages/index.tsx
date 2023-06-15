@@ -1,6 +1,6 @@
-import HeadInfo from '@/components/common/HeadInfo'
-import Image from 'next/image'
 import { useCallback, useState } from 'react'
+import Image from 'next/image'
+import HeadInfo from '@/components/common/HeadInfo'
 
 export default function Home() {
   const [showAboutMe, setShowAboutMe] = useState(false)

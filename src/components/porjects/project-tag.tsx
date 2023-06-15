@@ -1,5 +1,5 @@
-import { Tag } from '@/types'
 import { VFC } from 'react'
+import { Tag } from '@/types'
 
 interface Props {
   tag: Tag

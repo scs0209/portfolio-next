@@ -1,7 +1,8 @@
+/* eslint-disable */
+import { useState } from 'react'
+import axios from 'axios'
 import HeadInfo from '@/components/common/HeadInfo'
 import SvgIcons from '@/components/contact/svg'
-import axios from 'axios'
-import { useState } from 'react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })

@@ -37,7 +37,7 @@ const Header = () => {
               <path
                 fillRule="evenodd"
                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </button>
@@ -51,7 +51,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/projects"
-                  className="block py-2 pl-3 pr-4 text-white font-bold rounded hover:bg-gray-100 hover:text-rose-400 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 pl-3 pr-4 text-white font-bold rounded hover:bg-gray-100 hover:text-rose-400 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   aria-current="page"
                 >
                   내 프로젝트
@@ -60,7 +60,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/contact"
-                  className="block py-2 pl-3 pr-4 text-white font-bold rounded hover:bg-gray-100 hover:text-rose-400 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 pl-3 pr-4 text-white font-bold rounded hover:bg-gray-100 hover:text-rose-400 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   연락처
                 </Link>
