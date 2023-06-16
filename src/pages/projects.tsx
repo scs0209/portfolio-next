@@ -48,7 +48,10 @@ const Projects = ({ projects }: any) => {
                 const scale = isCurrent ? 1 : 0.8
 
                 return (
-                  <div style={{ opacity, transform: `scale(${scale})` }}>
+                  <div
+                    key={project.id}
+                    style={{ opacity, transform: `scale(${scale})` }}
+                  >
                     <ProjectsItem key={project.id} data={project} />
                   </div>
                 )

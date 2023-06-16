@@ -8,6 +8,7 @@ interface Props {
 const ProjectBtn: FC<Props> = ({ onClick, children }) => {
   return (
     <button
+      type="button"
       className="items-center px-4 py-2 text-sm font-medium text-white bg-purple-800 rounded-full hover:bg-purple-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
       onClick={onClick}
     >

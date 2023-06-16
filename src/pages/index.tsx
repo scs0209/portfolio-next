@@ -1,12 +1,22 @@
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
 import HeadInfo from '@/components/common/HeadInfo'
+import Qualification from '@/components/Main/Qualification'
 
 export default function Home() {
   const [showAboutMe, setShowAboutMe] = useState(false)
+  const [showQualification, setShowQualification] = useState(false)
 
   const toggleAboutMe = useCallback(() => {
     setShowAboutMe((prev) => !prev)
+  }, [])
+
+  const openQualification = useCallback(() => {
+    setShowQualification(true)
+  }, [])
+
+  const closeQualification = useCallback(() => {
+    setShowQualification(false)
   }, [])
 
   return (
@@ -51,19 +61,21 @@ export default function Home() {
             <div className="flex justify-center">
               <button
                 type="button"
+                onClick={openQualification}
                 className="inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg dark:bg-slate-500"
               >
-                Button
+                Qualification
               </button>
               <button
                 type="button"
                 className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
               >
-                Button
+                Skills
               </button>
             </div>
           </div>
         </div>
+        {showQualification && <Qualification onClose={closeQualification} />}
       </section>
     </>
   )
