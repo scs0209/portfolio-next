@@ -44,14 +44,14 @@ const ProjectsItem = ({ data }: any) => {
   return (
     <>
       <HeadInfo title="Projects" />
-      <div className="flex flex-col m-3 bg-purple-400 rounded-xl transform hover:scale-105 transition duration-300 ease-in-out shadow hover:shadow-lg dark:bg-slate-500 dark:border-gray-200/50 dark:hover:shadow-gray-400/50">
+      <div className="flex flex-col max-w-sm m-3 bg-purple-400 border-gray-200  rounded-lg transform hover:scale-105 transition duration-300 ease-in-out shadow hover:shadow-lg dark:bg-slate-500 dark:border-gray-200/50 dark:hover:shadow-gray-400/50">
         <Image
           className="rounded-t-xl"
           src={imgSrc}
           width="100"
-          height="60"
+          height="70"
           layout="responsive"
-          objectFit="none"
+          objectFit="contain"
           quality={100}
           alt="cover-image"
         />
@@ -59,9 +59,9 @@ const ProjectsItem = ({ data }: any) => {
           <h1 className="font-bold text-xl text-pink-950 dark:text-black">
             {projectTitle}
           </h1>
-          <h3 className="text-xs mt-2 text-white">{description}</h3>
-          <a href={githubLink} className="mt-3 mb-3">
-            <span className="px-4 py-0.5 inline-flex items-center text-sm rounded-full text-rose-500 border border-rose-500 hover:text-pink-400 hover:border-pink-400 undefined dark:text-gray-700 dark:border-gray-700 dark:hover:text-black dark:hover:border-black">
+          <h3 className="text-sm mt-2 text-white">{description}</h3>
+          <a href={githubLink} className="mt-3 mb-2">
+            <span className="px-3 py-0.5 text-sm fond-medium rounded-lg text-white border bg-rose-500 border-rose-500 hover:bg-pink-400 dark:border-gray-500 dark:bg-gray-500 dark:hover:text-black dark:hover:border-black">
               Github
             </span>
           </a>

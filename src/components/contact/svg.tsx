@@ -42,7 +42,7 @@ const SvgIcons = () => {
             strokeLinejoin="round"
             strokeWidth="2"
             className="w-5 h-5"
-            viewBox="0 0 12 12"
+            viewBox="0 0 24 24"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"

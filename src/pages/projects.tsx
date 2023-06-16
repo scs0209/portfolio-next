@@ -1,24 +1,62 @@
+import { useState } from 'react'
 import axios from 'axios'
 import { DATABASE_ID, NOTION_TOKEN } from '../../config'
 import HeadInfo from '@/components/common/HeadInfo'
 import ProjectsItem from '@/components/porjects/project-item'
+import ProjectBtn from '@/components/porjects/porjects-button'
 
 const Projects = ({ projects }: any) => {
+  const [currentPage, setCurrentPage] = useState(0)
+  const projectsPerPage = 1
+
+  const shownProject = projects.results.slice(
+    currentPage === 0 ? currentPage : currentPage - 1,
+    currentPage + projectsPerPage + 1,
+  )
+
+  const prevPage = () => {
+    setCurrentPage(currentPage > 0 ? currentPage - 1 : 0)
+  }
+
+  const nextPage = () => {
+    const numberOfPages = Math.ceil(projects.results.length / projectsPerPage)
+    setCurrentPage(
+      currentPage < numberOfPages - 1 ? currentPage + 1 : numberOfPages - 1,
+    )
+  }
+
   console.log(projects)
 
   return (
     <div className="bg-gray-200 dark:bg-slate-700">
-      <div className="flex flex-col items-center justify-center min-h-screen px-6">
+      <div className="flex flex-col items-center min-h-screen px-6 justify-center">
         <HeadInfo title="Projects" />
         <h1 className="text-center font-extrabold text-4xl mb-4 mt-4">
           총 프로젝트:{' '}
           <span className="text-purple-400">{projects.results.length}개</span>
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-12 m-4 sm:w-full">
-          {projects.results.map((project: any) => {
-            return <ProjectsItem key={project.id} data={project} />
-          })}
+        <div className="flex flex-col items-center w-full">
+          <div className="flex items-center justify-between w-full mt-2 xs:mt-0">
+            {/* <!-- Buttons --> */}
+            <ProjectBtn onClick={prevPage}>←</ProjectBtn>
+
+            <div className="flex items-center justify-center">
+              {shownProject.map((project: any, index: any) => {
+                const isCurrent = index === (currentPage === 0 ? 0 : 1)
+                const opacity = isCurrent ? 1 : 0.5
+                const scale = isCurrent ? 1 : 0.8
+
+                return (
+                  <div style={{ opacity, transform: `scale(${scale})` }}>
+                    <ProjectsItem key={project.id} data={project} />
+                  </div>
+                )
+              })}
+            </div>
+
+            <ProjectBtn onClick={nextPage}>→</ProjectBtn>
+          </div>
         </div>
       </div>
     </div>
