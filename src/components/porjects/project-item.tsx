@@ -1,16 +1,22 @@
 /* eslint-disable */
+import { useCallback, useState } from 'react'
 import Image from 'next/legacy/image'
 import ProjectTag from './project-tag'
 import { Tag } from '@/types'
 import HeadInfo from '../common/HeadInfo'
 
 const ProjectsItem = ({ data }: any) => {
+  const [showMore, setShowMore] = useState(false)
+
+  const toggleShowMore = useCallback(() => {
+    setShowMore((prev) => !prev)
+  }, [])
+
   const projectTitle = data.properties.name.title[0].plain_text
   const githubLink = data.properties.github.url
   const description = data.properties.description.rich_text[0].plain_text
   const imgSrc = data.cover.file?.url || data.cover.external?.url
   const tags: Tag[] = data.properties.tag.multi_select
-  console.log(tags)
   const start = data.properties.workPeriod.date.start
   let end = data.properties.workPeriod.date.end
   if (!end) {
@@ -59,7 +65,19 @@ const ProjectsItem = ({ data }: any) => {
           <h1 className="font-bold text-xl text-pink-950 dark:text-black">
             {projectTitle}
           </h1>
-          <h3 className="text-sm mt-2 text-white">{description}</h3>
+          <h3
+            className={`text-sm mt-2 text-white overflow-hidden ${
+              showMore ? '' : 'max-h-4'
+            }`}
+          >
+            {description}
+          </h3>
+          <button
+            className="text-sm md:hidden text-blue-500 hover:underline dark:text-blue-400 dark:hover:text-indigo-500"
+            onClick={toggleShowMore}
+          >
+            {showMore ? '숨기기' : '더보기'}
+          </button>
           <a href={githubLink} className="mt-3 mb-2">
             <span className="px-3 py-0.5 text-sm fond-medium rounded-lg text-white border bg-rose-500 border-rose-500 hover:bg-pink-400 dark:border-gray-500 dark:bg-gray-500 dark:hover:text-black dark:hover:border-black">
               Github

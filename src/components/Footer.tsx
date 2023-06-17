@@ -25,6 +25,7 @@ const Footer = () => {
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
           <a
             href="https://www.facebook.com/profile.php?id=100003927470009&mibextid=LQQJ4d"
+            target="_blank"
             className="text-slate-200"
           >
             <svg
@@ -40,6 +41,7 @@ const Footer = () => {
           </a>
           <a
             href="https://instagram.com/chaengs_97?igshid=MjEwN2IyYWYwYw=="
+            target="_blank"
             className="ml-3 text-slate-200"
           >
             <svg
@@ -55,7 +57,11 @@ const Footer = () => {
               <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
             </svg>
           </a>
-          <a href="https://github.com/scs0209" className="ml-3 text-slate-200">
+          <a
+            href="https://github.com/scs0209"
+            target="_blank"
+            className="ml-3 text-slate-200"
+          >
             <svg
               stroke="currentColor"
               strokeLinecap="round"
@@ -102,6 +108,7 @@ const Footer = () => {
           </a>
           <a
             href="https://capable-volcano-a51.notion.site/bef5f2dfbf844718b670943b6ea91d3f?pvs=4"
+            target="_blank"
             className="ml-3 text-slate-200"
           >
             <svg

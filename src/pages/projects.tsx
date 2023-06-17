@@ -1,21 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { DATABASE_ID, NOTION_TOKEN } from '../../config'
+import { Transition } from '@headlessui/react'
 import HeadInfo from '@/components/common/HeadInfo'
 import ProjectsItem from '@/components/porjects/project-item'
 import ProjectBtn from '@/components/porjects/porjects-button'
+import { DATABASE_ID, NOTION_TOKEN } from '../../config'
 
 const Projects = ({ projects }: any) => {
   const [currentPage, setCurrentPage] = useState(0)
+  const [showTransition, setShowTransition] = useState(false)
   const projectsPerPage = 1
 
   const shownProject = projects.results.slice(
-    currentPage === 0 ? currentPage : currentPage - 1,
-    currentPage + projectsPerPage + 1,
+    currentPage * projectsPerPage,
+    (currentPage + 1) * projectsPerPage,
   )
 
   const prevPage = () => {
     setCurrentPage(currentPage > 0 ? currentPage - 1 : 0)
+    setShowTransition(false)
   }
 
   const nextPage = () => {
@@ -23,9 +26,14 @@ const Projects = ({ projects }: any) => {
     setCurrentPage(
       currentPage < numberOfPages - 1 ? currentPage + 1 : numberOfPages - 1,
     )
+    setShowTransition(false)
   }
 
-  console.log(projects)
+  useEffect(() => {
+    setShowTransition(true)
+  }, [currentPage])
+
+  console.log(shownProject)
 
   return (
     <div className="bg-gray-200 dark:bg-slate-700">
@@ -43,16 +51,19 @@ const Projects = ({ projects }: any) => {
 
             <div className="flex items-center justify-center">
               {shownProject.map((project: any, index: any) => {
-                const isCurrent = index === (currentPage === 0 ? 0 : 1)
-                const opacity = isCurrent ? 1 : 0.5
-                const scale = isCurrent ? 1 : 0.8
-
                 return (
-                  <div
-                    key={project.id}
-                    style={{ opacity, transform: `scale(${scale})` }}
-                  >
-                    <ProjectsItem key={project.id} data={project} />
+                  <div key={project.id}>
+                    <Transition
+                      show={showTransition}
+                      enter="transform transition ease-in-out duration-1000"
+                      enterFrom="translate-x-full opacity-0"
+                      enterTo="translate-x-0 opacity-100"
+                      leave="transform transition ease-in-out duration-1000"
+                      leaveFrom="translate-x-0 opacity-100"
+                      leaveTo="translate-x-full opacity-0"
+                    >
+                      <ProjectsItem data={project} />
+                    </Transition>
                   </div>
                 )
               })}

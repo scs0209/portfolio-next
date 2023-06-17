@@ -5,6 +5,7 @@ const SvgIcons = () => {
       <span className="inline-flex">
         <a
           href="https://www.facebook.com/profile.php?id=100003927470009&mibextid=LQQJ4d"
+          target="_blank"
           className="text-gray-500"
         >
           <svg
@@ -20,6 +21,7 @@ const SvgIcons = () => {
         </a>
         <a
           href="https://instagram.com/chaengs_97?igshid=MjEwN2IyYWYwYw=="
+          target="_blank"
           className="ml-4 text-gray-500"
         >
           <svg
@@ -35,7 +37,11 @@ const SvgIcons = () => {
             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
           </svg>
         </a>
-        <a href="https://github.com/scs0209" className="ml-4 text-gray-500">
+        <a
+          href="https://github.com/scs0209"
+          target="_blank"
+          className="ml-4 text-gray-500"
+        >
           <svg
             stroke="currentColor"
             strokeLinecap="round"
@@ -82,6 +88,7 @@ const SvgIcons = () => {
         </a>
         <a
           href="https://capable-volcano-a51.notion.site/bef5f2dfbf844718b670943b6ea91d3f?pvs=4"
+          target="_blank"
           className="ml-3 text-gray-500"
         >
           <svg
