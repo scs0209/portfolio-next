@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Link from 'next/link'
 import ToggleBtn from './Toggle-Button'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -9,6 +9,23 @@ const Header = () => {
   const toggleMenuOpen = useCallback(() => {
     setIsMenuOpen((prev) => !prev)
   }, [])
+
+  const updateHeaderState = useCallback(() => {
+    if (window.innerWidth >= 768) {
+      setIsMenuOpen(true)
+    } else {
+      setIsMenuOpen(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    updateHeaderState()
+    window.addEventListener('resize', updateHeaderState)
+
+    return () => {
+      window.removeEventListener('resize', updateHeaderState)
+    }
+  }, [updateHeaderState])
 
   return (
     <>
@@ -43,7 +60,7 @@ const Header = () => {
           </button>
           <div
             className={`${
-              isMenuOpen ? 'hidden' : ''
+              isMenuOpen ? '' : 'hidden'
             } w-full md:block md:w-auto text-center`}
             id="navbar-solid-bg"
           >

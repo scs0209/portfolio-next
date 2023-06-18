@@ -56,16 +56,16 @@ const ProjectsItem = ({ data }: any) => {
   }
 
   return (
-    <div className="flex">
+    <div className="flex flex-col md:flex-row">
       <HeadInfo title="Projects" />
-      <div className="flex flex-col m-3 max-w-md max-h-md md:w-96 md:h-100 bg-purple-400 border-gray-200 rounded-lg transform hover:scale-105 transition duration-300 ease-in-out shadow hover:shadow-lg dark:bg-slate-500 dark:border-gray-200/50 dark:hover:shadow-gray-400/50">
+      <div className="flex flex-col m-3 max-w-sm max-h-sm md:w-96 md:h-100 bg-purple-400 border-gray-200 rounded-lg transform hover:scale-105 transition duration-300 ease-in-out shadow hover:shadow-lg dark:bg-slate-500 dark:border-gray-200/50 dark:hover:shadow-gray-400/50">
         <Image
           className="rounded-t-xl"
           src={imgSrc}
           width="100"
           height="70"
           layout="responsive"
-          objectFit="contain"
+          objectFit="cover"
           quality={100}
           alt="cover-image"
         />

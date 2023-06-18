@@ -36,38 +36,38 @@ const Projects = ({ projects }: any) => {
   console.log(shownProject)
 
   return (
-    <div className="bg-gray-200 dark:bg-slate-700">
+    <div className="bg-gray-200 dark:bg-slate-700 w-full">
+      <h1 className="text-center font-extrabold text-4xl p-4">
+        총 프로젝트:{' '}
+        <span className="text-purple-400">{projects.results.length}개</span>
+      </h1>
       <div className="flex flex-col items-center min-h-screen px-6 justify-center">
         <HeadInfo title="Projects" />
-        <h1 className="text-center font-extrabold text-4xl mb-4 mt-4">
-          총 프로젝트:{' '}
-          <span className="text-purple-400">{projects.results.length}개</span>
-        </h1>
-
-        <div className="flex flex-col items-center w-full">
+        <div className="flex items-center w-full">
           <div className="flex items-center justify-between w-full mt-2 xs:mt-0">
             {/* <!-- Buttons --> */}
             <ProjectBtn onClick={prevPage}>←</ProjectBtn>
 
-            <div className="flex items-center justify-center">
-              {shownProject.map((project: any, index: any) => {
-                return (
-                  <div key={project.id}>
-                    <Transition
-                      show={showTransition}
-                      enter="transform transition ease-in-out duration-1000"
-                      enterFrom="translate-x-full opacity-0"
-                      enterTo="translate-x-0 opacity-100"
-                      leave="transform transition ease-in-out duration-1000"
-                      leaveFrom="translate-x-0 opacity-100"
-                      leaveTo="translate-x-full opacity-0"
-                    >
-                      <ProjectsItem data={project} />
-                    </Transition>
-                  </div>
-                )
-              })}
-            </div>
+            {/* <div className="flex items-center justify-center w-full"> */}
+            {shownProject.map((project: any, index: any) => {
+              return (
+                <div key={project.id}>
+                  <Transition
+                    show={showTransition}
+                    enter="transform transition ease-in-out duration-1000"
+                    enterFrom="translate-x-full opacity-0"
+                    enterTo="translate-x-0 opacity-100"
+                    leave="transform transition ease-in-out duration-1000"
+                    leaveFrom="translate-x-0 opacity-100"
+                    leaveTo="translate-x-full opacity-0"
+                    className="w-full"
+                  >
+                    <ProjectsItem data={project} />
+                  </Transition>
+                </div>
+              )
+            })}
+            {/* </div> */}
 
             <ProjectBtn onClick={nextPage}>→</ProjectBtn>
           </div>
