@@ -88,7 +88,7 @@ const ProjectsItem = ({ data }: any) => {
           </div>
           <div className="flex justify-end">
             <button
-              className="text-sm text-blue-500 hover:underline dark:text-blue-400 dark:hover:text-indigo-500"
+              className="text-sm text-white hover:text-blue-500 hover:underline dark:text-blue-400 dark:hover:text-indigo-500"
               onClick={toggleShowMore}
             >
               {showMore ? '닫기' : '더보기'}

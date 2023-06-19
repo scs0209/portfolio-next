@@ -13,15 +13,15 @@ const Skill: VFC<Props> = ({ onClose }) => {
       <Table>
         <Table.Head>
           <Table.HeadCell>Language</Table.HeadCell>
-          <Table.HeadCell>Strong</Table.HeadCell>
-          <Table.HeadCell>Weak</Table.HeadCell>
+          <Table.HeadCell className="text-center">Strong</Table.HeadCell>
+          <Table.HeadCell className="text-center">Weak</Table.HeadCell>
         </Table.Head>
         <Table.Body className="divide-y">
           <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               HTML
             </Table.Cell>
-            <Table.Cell>
+            <Table.Cell className="flex justify-center">
               <div>
                 <svg
                   className="w-5 h-5 text-green-500"
@@ -38,13 +38,13 @@ const Skill: VFC<Props> = ({ onClose }) => {
                 </svg>
               </div>
             </Table.Cell>
-            <Table.Cell>-</Table.Cell>
+            <Table.Cell className="text-center">-</Table.Cell>
           </Table.Row>
           <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               <p>CSS</p>
             </Table.Cell>
-            <Table.Cell>
+            <Table.Cell className="flex justify-center">
               <div>
                 <svg
                   className="w-5 h-5 text-green-500"
@@ -61,13 +61,13 @@ const Skill: VFC<Props> = ({ onClose }) => {
                 </svg>
               </div>
             </Table.Cell>
-            <Table.Cell>-</Table.Cell>
+            <Table.Cell className="text-center">-</Table.Cell>
           </Table.Row>
           <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               <p>JavaScript</p>
             </Table.Cell>
-            <Table.Cell>
+            <Table.Cell className="flex justify-center">
               <div>
                 <svg
                   className="w-5 h-5 text-green-500"
@@ -84,13 +84,13 @@ const Skill: VFC<Props> = ({ onClose }) => {
                 </svg>
               </div>
             </Table.Cell>
-            <Table.Cell>-</Table.Cell>
+            <Table.Cell className="text-center">-</Table.Cell>
           </Table.Row>
           <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               <p>React</p>
             </Table.Cell>
-            <Table.Cell>
+            <Table.Cell className="flex justify-center">
               <div>
                 <svg
                   className="w-5 h-5 text-green-500"
@@ -107,14 +107,14 @@ const Skill: VFC<Props> = ({ onClose }) => {
                 </svg>
               </div>
             </Table.Cell>
-            <Table.Cell>-</Table.Cell>
+            <Table.Cell className="text-center">-</Table.Cell>
           </Table.Row>
           <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               <p>Next.js</p>
             </Table.Cell>
-            <Table.Cell>-</Table.Cell>
-            <Table.Cell>
+            <Table.Cell className="text-center">-</Table.Cell>
+            <Table.Cell className="flex justify-center">
               <div>
                 <svg
                   className="w-5 h-5 text-red-500"
@@ -136,8 +136,8 @@ const Skill: VFC<Props> = ({ onClose }) => {
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               <p>MySQL</p>
             </Table.Cell>
-            <Table.Cell>-</Table.Cell>
-            <Table.Cell>
+            <Table.Cell className="text-center">-</Table.Cell>
+            <Table.Cell className="flex justify-center">
               <div>
                 <svg
                   className="w-5 h-5 text-red-500"
@@ -159,8 +159,8 @@ const Skill: VFC<Props> = ({ onClose }) => {
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               <p>MongoDB</p>
             </Table.Cell>
-            <Table.Cell>-</Table.Cell>
-            <Table.Cell>
+            <Table.Cell className="text-center">-</Table.Cell>
+            <Table.Cell className="flex justify-center">
               <div>
                 <svg
                   className="w-5 h-5 text-red-500"
@@ -182,8 +182,8 @@ const Skill: VFC<Props> = ({ onClose }) => {
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               <p>Node.js</p>
             </Table.Cell>
-            <Table.Cell>-</Table.Cell>
-            <Table.Cell>
+            <Table.Cell className="text-center">-</Table.Cell>
+            <Table.Cell className="flex justify-center">
               <div>
                 <svg
                   className="w-5 h-5 text-red-500"
@@ -205,7 +205,7 @@ const Skill: VFC<Props> = ({ onClose }) => {
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               <p>Tailwind</p>
             </Table.Cell>
-            <Table.Cell>
+            <Table.Cell className="flex justify-center">
               <div>
                 <svg
                   className="w-5 h-5 text-green-500"
@@ -222,7 +222,7 @@ const Skill: VFC<Props> = ({ onClose }) => {
                 </svg>
               </div>
             </Table.Cell>
-            <Table.Cell>-</Table.Cell>
+            <Table.Cell className="text-center">-</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>

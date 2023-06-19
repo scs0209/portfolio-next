@@ -88,7 +88,15 @@ export async function getStaticProps() {
       'content-type': 'application/json',
       Authorization: `${NOTION_TOKEN}`,
     },
-    data: { page_size: 100 },
+    data: {
+      sorts: [
+        {
+          property: 'workPeriod',
+          direction: 'ascending',
+        },
+      ],
+      page_size: 100,
+    },
   }
 
   let projects

@@ -17,10 +17,10 @@ const Qualification: VFC<Props> = ({ onClose }) => {
                 Certificate
               </th>
               <th scope="col" className="px-6 py-3">
-                <div className="flex items-center">Score</div>
+                <div className="flex items-center justify-center">Score</div>
               </th>
               <th scope="col" className="px-6 py-3">
-                <div className="flex items-center">Date</div>
+                <div className="flex items-center justify-center">Date</div>
               </th>
             </tr>
           </thead>
@@ -32,8 +32,8 @@ const Qualification: VFC<Props> = ({ onClose }) => {
               >
                 TOEIC Speaking
               </th>
-              <td className="px-6 py-4">Level 6(140)</td>
-              <td className="px-6 py-4">2021.11</td>
+              <td className="text-center px-6 py-4">Level 6(140)</td>
+              <td className="text-center px-6 py-4">2021.11</td>
             </tr>
             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
               <th
@@ -42,8 +42,8 @@ const Qualification: VFC<Props> = ({ onClose }) => {
               >
                 TOEIC
               </th>
-              <td className="px-6 py-4">755</td>
-              <td className="px-6 py-4">2022.05</td>
+              <td className="text-center px-6 py-4">755</td>
+              <td className="text-center px-6 py-4">2022.05</td>
             </tr>
             <tr className="bg-white dark:bg-gray-800">
               <th
@@ -52,8 +52,8 @@ const Qualification: VFC<Props> = ({ onClose }) => {
               >
                 정보처리기사
               </th>
-              <td className="px-6 py-4">PASS</td>
-              <td className="px-6 py-4">2022.11</td>
+              <td className="text-center px-6 py-4">PASS</td>
+              <td className="text-center px-6 py-4">2022.11</td>
             </tr>
           </tbody>
         </table>
