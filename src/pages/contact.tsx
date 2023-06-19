@@ -3,6 +3,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import HeadInfo from '@/components/common/HeadInfo'
 import SvgIcons from '@/components/contact/svg'
+import Image from 'next/legacy/image'
+import { Avatar } from 'flowbite-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -34,7 +36,13 @@ const Contact = () => {
       <section className="text-gray-600 body-font relative dark:text-white dark:bg-slate-700">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12 ">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white">
+            <h1 className="flex justify-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white ">
+              <Avatar
+                alt="avatar"
+                img="/images/이력서사진.jpg"
+                className="mr-3"
+                rounded
+              />
               Contact Me
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base ">

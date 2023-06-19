@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import ToggleBtn from './Toggle-Button'
 import { useCallback, useEffect, useState } from 'react'
+import Image from 'next/legacy/image'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -32,7 +33,8 @@ const Header = () => {
       <nav className="bg-purple-400 text-gray-600 body-font dark:bg-slate-800 dark:border-gray-700">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link href="/" className="flex items-center">
-            <span className="self-center text-2xl font-semibold text-white whitespace-nowrap dark:text-white">
+            <Image src="/images/logo2.svg" alt="logo" width={26} height={26} />
+            <span className="self-center text-2xl ml-3 font-semibold text-white whitespace-nowrap dark:text-white">
               SCS's Portfolio
             </span>
           </Link>

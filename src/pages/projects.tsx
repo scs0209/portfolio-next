@@ -33,8 +33,6 @@ const Projects = ({ projects }: any) => {
     setShowTransition(true)
   }, [currentPage])
 
-  console.log(shownProject)
-
   return (
     <div className="bg-gray-200 dark:bg-slate-700 w-full">
       <h1 className="text-center font-extrabold text-4xl p-4">
@@ -104,7 +102,6 @@ export async function getStaticProps() {
   try {
     const response = await axios.request(options)
     projects = await response.data
-    console.log(projects)
   } catch (error) {
     console.error(error)
   }

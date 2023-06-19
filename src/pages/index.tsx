@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react'
-import Image from 'next/image'
 import HeadInfo from '@/components/common/HeadInfo'
 import Qualification from '@/components/Main/Qualification'
 import Skill from '@/components/Main/Skill'
 import useToggle from '@/hooks/useToggle'
+import Animation from '@/components/Main/Animation'
 
 export default function Home() {
   const [showAboutMe, setShowAboutMe] = useState(false)
@@ -25,18 +25,10 @@ export default function Home() {
               !showAboutMe ? 'opacity-100 animate-pulse' : 'opacity-0'
             } text-center font-bold lg:w-2/3 mb-10  w-full transition-opacity duration-500 ease-in-out`}
           >
-            저를 클릭해주세요
+            클릭해주세요
             <span className="mx-1 inline-block">↓</span>
           </p>
-          <Image
-            onClick={toggleAboutMe}
-            className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-center rounded-full"
-            alt="hero"
-            src="/images/이력서사진.jpg"
-            width={500}
-            height={500}
-          />
-
+          <Animation toggle={toggleAboutMe} />
           <div
             className={`${
               showAboutMe ? 'opacity-100' : 'opacity-0'
