@@ -10,7 +10,7 @@
 
 ## 배포 주소
 
-> **프론트 서버** : <a href="https://portfolio-next-red-three.vercel.app/" target="_blank"> Portfolio </a>
+> **프론트 서버** : [Portfolio](https://portfolio-next-red-three.vercel.app/){:target="_blank"}
 
 ## 개발자 소개
 
