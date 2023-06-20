@@ -10,7 +10,7 @@
 
 ## 배포 주소
 
-> **프론트 서버** : [https://web-myblog-p8xrq2mlfsc6kg2.sel3.cloudtype.app/](https://portfolio-next-red-three.vercel.app/)https://portfolio-next-red-three.vercel.app/
+> **프론트 서버** : https://portfolio-next-red-three.vercel.app/
 
 ## 개발자 소개
 
