@@ -3,8 +3,9 @@ import { useState } from 'react'
 import axios from 'axios'
 import HeadInfo from '@/components/common/HeadInfo'
 import SvgIcons from '@/components/contact/svg'
-import Image from 'next/legacy/image'
 import { Avatar } from 'flowbite-react'
+import Animation from '@/components/Main/Animation'
+import Link from 'next/link'
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -33,21 +34,24 @@ const Contact = () => {
   return (
     <>
       <HeadInfo title="Contact Me" />
-      <section className="text-gray-600 body-font relative dark:text-white dark:bg-slate-700">
+      <section className="flex text-gray-600 body-font relative dark:text-white dark:bg-slate-700 max-w-screen-lx mx-auto my-0">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12 ">
-            <h1 className="flex justify-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white ">
-              <Avatar
-                alt="avatar"
-                img="/images/이력서사진.jpg"
-                className="mr-3"
-                rounded
-              />
-              Contact Me
-            </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base ">
-              피드백은 언제나 환영입니다!
-            </p>
+          <div className="flex w-2/3 justify-between mx-auto items-center">
+            <div className="flex flex-col justify-start text-center w-full mb-12 relative left-20">
+              <h1 className="flex justify-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white ">
+                <Avatar
+                  alt="avatar"
+                  img="/images/이력서사진.jpg"
+                  className="mr-3"
+                  rounded
+                />
+                Contact Me
+              </h1>
+              <p className="lg:w-2/3 font-semibold mx-auto leading-relaxed text-base ">
+                피드백은 언제나 환영입니다!
+              </p>
+            </div>
+            <Animation />
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
@@ -92,7 +96,7 @@ const Contact = () => {
                   ></textarea>
                 </div>
               </div>
-              <div className="p-2 w-full">
+              <div className="p-2 w-full mx-auto">
                 <button
                   type="submit"
                   onClick={handleSubmit}
@@ -100,6 +104,9 @@ const Contact = () => {
                 >
                   Send
                 </button>
+                <Link href="/" className="flex justify-center">
+                  홈으로
+                </Link>
               </div>
               <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                 <div className="mb-5">

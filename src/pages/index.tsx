@@ -1,11 +1,15 @@
+/* eslint-disable */
 import { useCallback, useState } from 'react'
+import axios from 'axios'
 import HeadInfo from '@/components/common/HeadInfo'
 import Qualification from '@/components/Main/Qualification'
 import Skill from '@/components/Main/Skill'
 import useToggle from '@/hooks/useToggle'
-import Animation from '@/components/Main/Animation'
+import { DATABASE_ID, NOTION_TOKEN } from '../../config'
+import Projects from '@/components/porjects/projects'
+import Footer from '@/components/Footer'
 
-export default function Home() {
+export default function Home({ projects }: any) {
   const [showAboutMe, setShowAboutMe] = useState(false)
   const [showQualification, openQualification, closeQualification] =
     useToggle(false)
@@ -18,17 +22,15 @@ export default function Home() {
   return (
     <>
       <HeadInfo title="Home" />
-      <section className="bg-gray-200 text-gray-600 body-font dark:text-white dark:bg-slate-700">
+      <section className="text-gray-600 body-font dark:text-white dark:bg-slate-700">
         <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
           <p
-            className={`${
-              !showAboutMe ? 'opacity-100 animate-pulse' : 'opacity-0'
-            } text-center font-bold lg:w-2/3 mb-10  w-full transition-opacity duration-500 ease-in-out`}
+            onClick={toggleAboutMe}
+            className="text-4xl opacity-100 animate-pulse text-center text-gold font-bold lg:w-2/3 mb-10 w-full transition-opacity duration-500 ease-in-out"
           >
-            클릭해주세요
+            창수의 포트폴리오
             <span className="mx-1 inline-block">↓</span>
           </p>
-          <Animation toggle={toggleAboutMe} />
           <div
             className={`${
               showAboutMe ? 'opacity-100' : 'opacity-0'
@@ -67,6 +69,44 @@ export default function Home() {
         {showQualification && <Qualification onClose={closeQualification} />}
         {showSkill && <Skill onClose={closeSkill} />}
       </section>
+      <Projects projects={projects} />
+      <Footer />
     </>
   )
+}
+
+// 빌드 타임에 호출되서 데이터를 가져온 다음에 화면에 렌더링이 됨
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    url: `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
+    headers: {
+      accept: 'application/json',
+      'Notion-Version': '2022-06-28',
+      'content-type': 'application/json',
+      Authorization: `${NOTION_TOKEN}`,
+    },
+    data: {
+      sorts: [
+        {
+          property: 'workPeriod',
+          direction: 'ascending',
+        },
+      ],
+      page_size: 100,
+    },
+  }
+
+  let projects
+
+  try {
+    const response = await axios.request(options)
+    projects = await response.data
+  } catch (error) {
+    console.error(error)
+  }
+
+  return {
+    props: { projects },
+  }
 }

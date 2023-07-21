@@ -3,13 +3,13 @@ import Image from 'next/legacy/image'
 
 const Footer = () => {
   return (
-    <footer className="text-white-600 body-font bg-purple-400 dark:bg-slate-800">
+    <footer className="mt-2 text-white-600 body-font bg-gray-200 dark:bg-slate-800">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <Image src="/images/logo2.svg" alt="logo" width={26} height={26} />
           <span className="text-white ml-3 text-xl">성창수</span>
         </a>
-        <p className="text-sm text-slate-200 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+        <p className="text-sm text-slate-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
           © 2023 SCS —
           <span className="text-white ml-1">All rights reserved</span>
         </p>
@@ -17,7 +17,7 @@ const Footer = () => {
           <a
             href="https://www.facebook.com/profile.php?id=100003927470009&mibextid=LQQJ4d"
             target="_blank"
-            className="text-slate-200"
+            className="text-slate-500"
           >
             <svg
               fill="currentColor"
@@ -33,7 +33,7 @@ const Footer = () => {
           <a
             href="https://instagram.com/chaengs_97?igshid=MjEwN2IyYWYwYw=="
             target="_blank"
-            className="ml-3 text-slate-200"
+            className="ml-3 text-slate-500"
           >
             <svg
               fill="none"
@@ -51,7 +51,7 @@ const Footer = () => {
           <a
             href="https://github.com/scs0209"
             target="_blank"
-            className="ml-3 text-slate-200"
+            className="ml-3 text-slate-500"
           >
             <svg
               stroke="currentColor"
@@ -100,7 +100,7 @@ const Footer = () => {
           <a
             href="https://capable-volcano-a51.notion.site/bef5f2dfbf844718b670943b6ea91d3f?pvs=4"
             target="_blank"
-            className="ml-3 text-slate-200"
+            className="ml-3 text-slate-500"
           >
             <svg
               viewBox="0 0 24 24"

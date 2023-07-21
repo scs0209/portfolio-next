@@ -1,12 +1,10 @@
-import Footer from './Footer'
-import Header from './Header'
+import AnimationPage from './animation'
 
 const Layout = ({ children }: any) => {
   return (
     <>
-      <Header />
-      <div>{children}</div>
-      <Footer />
+      <AnimationPage />
+      <div className="h-screen w-full">{children}</div>
     </>
   )
 }

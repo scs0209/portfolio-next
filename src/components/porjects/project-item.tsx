@@ -3,9 +3,9 @@ import { useCallback, useState } from 'react'
 import Image from 'next/legacy/image'
 import ProjectTag from './project-tag'
 import { Tag } from '@/types'
-import HeadInfo from '../common/HeadInfo'
-import { Card, CustomFlowbiteTheme } from 'flowbite-react'
+import { Button, Card, CustomFlowbiteTheme, Timeline } from 'flowbite-react'
 import { Transition } from '@headlessui/react'
+import { HiCalendar } from 'react-icons/hi'
 
 const customTheme: CustomFlowbiteTheme['card'] = {
   root: {
@@ -56,46 +56,63 @@ const ProjectsItem = ({ data }: any) => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row">
-      <HeadInfo title="Projects" />
-      <div className="flex flex-col m-3 max-w-sm max-h-sm md:w-96 md:h-100 bg-purple-400 border-gray-200 rounded-lg transform hover:scale-105 transition duration-300 ease-in-out shadow hover:shadow-lg dark:bg-slate-500 dark:border-gray-200/50 dark:hover:shadow-gray-400/50">
-        <Image
-          className="rounded-t-xl"
-          src={imgSrc}
-          width="100"
-          height="70"
-          layout="responsive"
-          objectFit="cover"
-          quality={100}
-          alt="cover-image"
-        />
-        <div className="p-6 flex flex-col">
-          <h1 className="font-bold text-xl text-pink-950 dark:text-black">
-            {projectTitle}
-          </h1>
-          <a href={githubLink} target="_blank" className="mt-3 mb-2">
-            <span className="px-3 py-0.5 text-sm fond-medium rounded-lg text-white border bg-rose-500 border-rose-500 hover:bg-pink-400 dark:border-gray-500 dark:bg-gray-500 dark:hover:text-black dark:hover:border-black">
-              Github
-            </span>
-          </a>
-          <h3 className="text-xs mt-2 text-white">
-            작업기간: {`${start} ~ ${end}`} (총: {diffDate(start, end)})
-          </h3>
-          <div className="flex flex-row flex-wrap">
-            {tags.map((tag: Tag) => {
-              return <ProjectTag key={tag.id} tag={tag} />
-            })}
-          </div>
-          <div className="flex justify-end">
-            <button
-              className="text-sm text-white hover:text-blue-500 hover:underline dark:text-blue-400 dark:hover:text-indigo-500"
+    <>
+      <Timeline.Item>
+        <Timeline.Point icon={HiCalendar} />
+        <Timeline.Content>
+          <Timeline.Time className="text-gray-700">
+            {`${start} ~ ${end}`} (총: {diffDate(start, end)})
+          </Timeline.Time>
+          <Timeline.Title className="text-xl text-gold items-center mb-3">
+            {projectTitle}{' '}
+            <a href={githubLink} target="_blank" className="mt-3 mb-2">
+              <span className="px-3 py-0.5 text-sm fond-medium rounded-lg text-white border bg-gray-500 border-gray-500 hover:bg-pink-400 dark:border-gray-500 dark:bg-gray-500 dark:hover:text-black dark:hover:border-black">
+                Github
+              </span>
+            </a>
+          </Timeline.Title>
+          <Timeline.Body>
+            <div>{description} </div>
+            <Button
+              color="gray"
+              size="xs"
+              className="mt-2"
               onClick={toggleShowMore}
             >
               {showMore ? '닫기' : '더보기'}
-            </button>
+            </Button>
+          </Timeline.Body>
+        </Timeline.Content>
+      </Timeline.Item>
+      {/* <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col m-3 max-w-sm max-h-sm md:w-96 md:h-100 bg-purple-400 border-gray-200 rounded-lg transform hover:scale-105 transition duration-300 ease-in-out shadow hover:shadow-lg dark:bg-slate-500 dark:border-gray-200/50 dark:hover:shadow-gray-400/50">
+          <Image
+            className="rounded-t-xl"
+            src={imgSrc}
+            width="100"
+            height="70"
+            layout="responsive"
+            objectFit="cover"
+            quality={100}
+            alt="cover-image"
+          />
+          <div className="p-6 flex flex-col">
+            <h1 className="font-bold text-xl text-pink-950 dark:text-black">
+              {projectTitle}
+            </h1>
+            <h3 className="text-xs mt-2 text-white">
+              작업기간: {`${start} ~ ${end}`} (총: {diffDate(start, end)})
+            </h3>
+            <div className="flex justify-end">
+              <button
+                className="text-sm text-white hover:text-blue-500 hover:underline dark:text-blue-400 dark:hover:text-indigo-500"
+                onClick={toggleShowMore}
+              >
+                {showMore ? '닫기' : '더보기'}
+              </button>
+            </div>
           </div>
-        </div>
-      </div>
+        </div> */}
       <Transition
         show={showMore}
         enter="transform transition duration-700"
@@ -109,9 +126,15 @@ const ProjectsItem = ({ data }: any) => {
         <Card className="max-w-sm min-h-full" theme={customTheme}>
           <div className="font-semibold font-sans">프로젝트 목적: </div>
           <div> {description}</div>
+          <div className="flex flex-row flex-wrap">
+            {tags.map((tag: Tag) => {
+              return <ProjectTag key={tag.id} tag={tag} />
+            })}
+          </div>
         </Card>
       </Transition>
-    </div>
+      {/* </div> */}
+    </>
   )
 }
 

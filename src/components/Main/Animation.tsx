@@ -1,19 +1,13 @@
-import { VFC } from 'react'
 import Lottie from 'react-lottie-player'
 import lottieJson from '../../../public/animation.json'
 
-interface Props {
-  toggle: () => void
-}
-
-const Animation: VFC<Props> = ({ toggle }) => {
+const Animation = () => {
   return (
     <Lottie
-      onClick={toggle}
       loop={false}
       animationData={lottieJson}
       play
-      className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-center rounded-full"
+      className="lg:w-48 md:w-36 w-32 mb-10 object-center rounded-full"
     />
   )
 }
