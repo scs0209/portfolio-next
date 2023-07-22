@@ -4,7 +4,6 @@ import axios from 'axios'
 import HeadInfo from '@/components/common/HeadInfo'
 import SvgIcons from '@/components/contact/svg'
 import { Avatar } from 'flowbite-react'
-import Animation from '@/components/Main/Animation'
 import Link from 'next/link'
 
 const Contact = () => {
@@ -51,7 +50,6 @@ const Contact = () => {
                 피드백은 언제나 환영입니다!
               </p>
             </div>
-            <Animation />
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">

@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="bg-purple-400 text-gray-600 body-font dark:bg-slate-800 dark:border-gray-700">
+      <nav className="bg-transparent text-gray-600 body-font">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link href="/" className="flex items-center">
             <Image src="/images/logo2.svg" alt="logo" width={26} height={26} />
@@ -69,17 +69,8 @@ const Header = () => {
             <ul className="flex flex-col items-center font-medium mt-4 rounded-lg bg-purple-400 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
               <li>
                 <Link
-                  href="/projects"
-                  className="block py-2 pl-3 pr-4 text-white font-bold rounded hover:bg-gray-100 hover:text-rose-400 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  aria-current="page"
-                >
-                  내 프로젝트
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/contact"
-                  className="block py-2 pl-3 pr-4 text-white font-bold rounded hover:bg-gray-100 hover:text-rose-400 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 pl-3 pr-4 text-blue-400 font-bold rounded hover:bg-gray-100 hover:text-rose-400 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   연락처
                 </Link>
