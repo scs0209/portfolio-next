@@ -34,7 +34,7 @@ const Contact = () => {
   return (
     <>
       <HeadInfo title="Contact Me" />
-      <section className="flex text-gray-600 body-font relative dark:text-white dark:bg-slate-700 max-w-screen-lx mx-auto my-0">
+      <section className="flex text-gray-600 body-font relative max-w-screen-lx mx-auto my-0">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex w-2/3 justify-between mx-auto items-center">
             <div className="flex flex-col justify-start text-center w-full mb-12 relative left-20">
@@ -100,7 +100,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   onClick={handleSubmit}
-                  className="flex mx-auto text-white bg-purple-500 border-0 py-2 px-8 focus:outline-none hover:bg-purple-600 rounded text-lg dark:bg-slate-500 dark:hover:bg-purple-500"
+                  className="flex mx-auto text-white bg-purple-500 border-0 py-2 px-8 focus:outline-none hover:bg-purple-600 rounded text-lg"
                 >
                   Send
                 </button>

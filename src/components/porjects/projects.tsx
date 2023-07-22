@@ -11,7 +11,7 @@ interface Props {
 
 const Projects: VFC<Props> = ({ projects }) => {
   return (
-    <div className="dark:bg-slate-700 w-full">
+    <div className="w-full">
       <h1 className="text-center font-extrabold text-4xl p-4">
         총 프로젝트:{' '}
         <span className="text-purple-400">{projects.results.length}개</span>
@@ -29,7 +29,7 @@ const Projects: VFC<Props> = ({ projects }) => {
           <Timeline.Body>
             <Link
               href="/contact"
-              className="ml-8 block py-2 pl-3 pr-4 text-white font-bold rounded hover:bg-gray-100 hover:text-rose-400 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              className="ml-8 block py-2 pl-3 pr-4 text-white font-bold rounded hover:bg-gray-100 hover:text-rose-400 md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
             >
               Contact Me
             </Link>

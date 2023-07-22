@@ -23,7 +23,7 @@ export default function Home({ projects }: any) {
   return (
     <>
       <HeadInfo title="Home" />
-      <section className="text-gray-600 body-font dark:text-white dark:bg-slate-700">
+      <section className="text-gray-600 body-font dark:text-white">
         <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
           <p
             onClick={toggleAboutMe}
@@ -94,7 +94,7 @@ export async function getStaticProps() {
       sorts: [
         {
           property: 'workPeriod',
-          direction: 'ascending',
+          direction: 'descending',
         },
       ],
       page_size: 100,

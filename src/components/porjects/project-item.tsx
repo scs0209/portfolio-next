@@ -23,7 +23,7 @@ const ProjectsItem = ({ data }: any) => {
   const projectTitle = data.properties.name.title[0].plain_text
   const githubLink = data.properties.github.url
   const description = data.properties.description.rich_text[0].plain_text
-  const imgSrc = data.cover.file?.url || data.cover.external?.url
+  const imgSrc = data.cover?.file?.url || data.cover?.external?.url
   const tags: Tag[] = data.properties.tag.multi_select
   const start = data.properties.workPeriod.date.start
   let end = data.properties.workPeriod.date.end
