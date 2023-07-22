@@ -8,6 +8,7 @@ import useToggle from '@/hooks/useToggle'
 import { DATABASE_ID, NOTION_TOKEN } from '../../config'
 import Projects from '@/components/porjects/projects'
 import Footer from '@/components/Footer'
+import ToggleBtn from '@/components/Toggle-Button'
 
 export default function Home({ projects }: any) {
   const [showAboutMe, setShowAboutMe] = useState(false)
@@ -31,6 +32,9 @@ export default function Home({ projects }: any) {
             창수의 포트폴리오
             <span className="mx-1 inline-block">↓</span>
           </p>
+          <div className="relative -top-20 -right-80">
+            <ToggleBtn />
+          </div>
           <div
             className={`${
               showAboutMe ? 'opacity-100' : 'opacity-0'
