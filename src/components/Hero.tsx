@@ -24,12 +24,14 @@ const Hero: VFC<Props> = ({ openQualification, openSkill }) => {
             것을 목표로 하고 있습니다.
           </p>
           <button
+            type="button"
             onClick={openQualification}
             className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-rose-400 hover:bg-rose-600 focus:ring-4 focus:ring-rose-300"
           >
             Qualification
           </button>
           <button
+            type="button"
             onClick={openSkill}
             className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
           >
