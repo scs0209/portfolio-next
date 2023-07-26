@@ -1,5 +1,5 @@
 /* eslint-disable */
-import Layout from '@/components/Layout'
+import AnimationPage from '@/components/animation'
 import '@/styles/globals.css'
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider attribute="class">
-      <Layout>
+      <AnimationPage>
         <div
           className={`transition duration-500 ease-out-opacity ${
             state.show ? 'opacity-0' : 'opacity-100'
@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }: AppProps) {
         >
           <Component {...pageProps} />
         </div>
-      </Layout>
+      </AnimationPage>
     </ThemeProvider>
   )
 }
