@@ -10,6 +10,7 @@ import {
 } from '@react-three/drei'
 import { Canvas, useThree } from '@react-three/fiber'
 import { Physics } from '@react-three/cannon'
+import ProjectBtn from '@/components/Main/ProjectBtn'
 
 function Hero() {
   const [matcapTexture] = useMatcapTexture('CB4E88_F99AD6_F384C3_ED75B9')
@@ -80,6 +81,9 @@ export default function Example() {
         </Suspense>
         <ambientLight intensity={1} color="#dee2ff" />
       </Canvas>
+      <div className="flex justify-center relative">
+        <ProjectBtn />
+      </div>
     </div>
   )
 }
