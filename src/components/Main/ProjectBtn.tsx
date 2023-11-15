@@ -7,11 +7,11 @@ const ProjectBtn = () => {
   return (
     <div className="mx-auto xl:mx-0 absolute z-50 right-4 bottom-10">
       <Link
-        href={'/projects'}
+        href="/projects"
         className="relative w-[185px] h-[185px] flex justify-center items-center bg-circleStar bg-cover bg-no-repeat group"
       >
         <Image
-          src={'/rounded-text.png'}
+          src="/rounded-text.png"
           width={141}
           height={148}
           alt="project button"

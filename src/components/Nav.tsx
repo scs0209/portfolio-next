@@ -10,7 +10,7 @@ import {
 } from 'react-icons/hi2'
 
 const navData = [
-  { name: 'home', path: '/', icon: <HiHome /> },
+  { name: 'home', path: '/example', icon: <HiHome /> },
   { name: 'about', path: '/about', icon: <HiUser /> },
   {
     name: 'services',
