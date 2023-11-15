@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="bg-transparent text-gray-600 body-font">
+      <header className="bg-transparent text-gray-600 body-font fixed top-0 z-20 w-full">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link href="/" className="flex items-center">
             <Image src="/images/logo2.svg" alt="logo" width={26} height={26} />
@@ -83,7 +83,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </header>
     </>
   )
 }

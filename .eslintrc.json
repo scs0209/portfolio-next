@@ -33,6 +33,7 @@
       2,
       { "namedComponents": ["arrow-function", "function-declaration"] }
     ],
-    "@typescript-eslint/no-empty-interface": "off"
+    "@typescript-eslint/no-empty-interface": "off",
+    "react/no-array-index-key": "off"
   }
 }
