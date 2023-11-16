@@ -1,4 +1,5 @@
 /* eslint-disable */
+import Cursor from '@/components/Cursor'
 import Header from '@/components/Header'
 import Nav from '@/components/Nav'
 import Transition from '@/components/Transition'
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {/* <AnimationPage> */}
       <AnimatePresence mode="wait">
         <motion.div key={router.route} className="h-full">
+          <Cursor />
           <Transition />
           <Header />
           <Component {...pageProps} />
