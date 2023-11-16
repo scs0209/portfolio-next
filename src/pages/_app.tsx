@@ -18,8 +18,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <motion.div key={router.route} className="h-full">
           <Transition />
           <Header />
-          <Nav />
           <Component {...pageProps} />
+          <Nav />
         </motion.div>
       </AnimatePresence>
       {/* </AnimationPage> */}

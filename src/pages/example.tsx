@@ -13,7 +13,7 @@ import { Physics } from '@react-three/cannon'
 import ProjectBtn from '@/components/Main/ProjectBtn'
 
 function Hero() {
-  const [matcapTexture] = useMatcapTexture('CB4E88_F99AD6_F384C3_ED75B9')
+  const [matcapTexture] = useMatcapTexture('F77777_FBE1E1_FAB2B2_FBC4C4')
   const ref = useRef<any>()
 
   const { width: w, height: h } = useThree((state) => state.viewport)
@@ -38,7 +38,7 @@ function Hero() {
             letterSpacing={0.3}
           >
             {`HELLO THIS IS \n SCS's WORLD`}
-            <meshMatcapMaterial color="white" matcap={matcapTexture} />
+            <meshMatcapMaterial matcap={matcapTexture} />
           </Text3D>
         </Float>
       </Physics>
