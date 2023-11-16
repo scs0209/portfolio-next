@@ -37,6 +37,7 @@
     "react-lottie-player": "^1.5.4",
     "react-three-fiber": "^6.0.13",
     "react-tsparticles": "^2.12.2",
+    "swiper": "^11.0.4",
     "tailwindcss": "3.3.2",
     "tailwindcss-animation-delay": "^1.0.7",
     "three": "^0.153.0",

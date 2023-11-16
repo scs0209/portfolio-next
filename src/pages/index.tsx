@@ -5,7 +5,7 @@ import Qualification from '@/components/Main/Qualification'
 import Skill from '@/components/Main/Skill'
 import useToggle from '@/hooks/useToggle'
 import { DATABASE_ID, NOTION_TOKEN } from '../../config'
-import Projects from '@/components/porjects/projects'
+import Projects from '@/components/projects/projects'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 

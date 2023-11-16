@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { VFC } from 'react'
 import { Timeline } from 'flowbite-react'
-import ProjectsItem from '@/components/porjects/project-item'
+import ProjectsItem from '@/components/projects/project-item'
 
 interface Props {
   projects: any

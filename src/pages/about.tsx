@@ -15,7 +15,7 @@ import {
   SiAdobephotoshop,
 } from 'react-icons/si'
 import { motion } from 'framer-motion'
-import ParticlesContainer from '@/components/porjects/ParticlesContainer'
+import ParticlesContainer from '@/components/About/ParticlesContainer'
 import Animation from '@/components/Main/Animation'
 import { fadeIn } from '../../variants'
 
@@ -90,7 +90,7 @@ const aboutData = [
   },
 ]
 
-const Projects = () => {
+const About = () => {
   const [index, setIndex] = useState(0)
   return (
     <div className="bg-[#12131D] text-white text-center xl:text-left h-screen w-full">
@@ -159,4 +159,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default About
