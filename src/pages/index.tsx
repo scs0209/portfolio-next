@@ -67,7 +67,7 @@ function CircularText({ text, radius, rotationSpeed, matcapTexture }: any) {
 }
 
 function Hero() {
-  const [matcapTexture] = useMatcapTexture('F77777_FBE1E1_FAB2B2_FBC4C4')
+  const [matcapTexture] = useMatcapTexture('7877EE_D87FC5_75D9C7_1C78C0')
 
   return (
     <Center scale={[0.9, 1, 1]}>
