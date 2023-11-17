@@ -27,6 +27,7 @@
     "flowbite-react": "^0.4.7",
     "framer-motion": "^10.16.5",
     "heroicons": "^2.0.18",
+    "leva": "^0.9.35",
     "next": "^13.5.5",
     "next-themes": "^0.2.1",
     "nodemailer": "^6.9.3",
