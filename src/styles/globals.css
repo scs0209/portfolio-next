@@ -13,7 +13,7 @@
 }
 
 .scene {
-  background-image: linear-gradient(
+  background: linear-gradient(
     180deg,
     hwb(200deg 0% 98%) 1%,
     hsl(200deg 100% 3%) 17%,
