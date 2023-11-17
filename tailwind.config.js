@@ -6,9 +6,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  options: {
-    safelist: ['scene'],
-  },
+  safelist: ['scene'],
   darkMode: 'class',
   theme: {
     animationDelay: {
