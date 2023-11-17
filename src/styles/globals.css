@@ -36,6 +36,8 @@
     hsl(200deg 100% 63%) 99%,
     hsl(200deg 100% 66%) 100%
   );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .canvas {

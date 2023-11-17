@@ -14,7 +14,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider attribute="class">
-      {/* <AnimationPage> */}
       <AnimatePresence mode="wait">
         <motion.div key={router.route} className="h-full">
           <Cursor />
@@ -24,7 +23,6 @@ export default function App({ Component, pageProps }: AppProps) {
           <Nav />
         </motion.div>
       </AnimatePresence>
-      {/* </AnimationPage> */}
     </ThemeProvider>
   )
 }
