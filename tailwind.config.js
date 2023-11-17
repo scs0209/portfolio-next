@@ -6,7 +6,10 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class', // 이 설정을 추가 해준다
+  options: {
+    safelist: ['scene'],
+  },
+  darkMode: 'class',
   theme: {
     animationDelay: {
       100: '0.1s',
@@ -23,6 +26,7 @@ module.exports = {
         primary: '#131424',
         secondary: '#393A47',
         accent: '#F13024',
+        darkbg: '#121212',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
