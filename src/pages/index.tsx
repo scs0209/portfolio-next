@@ -85,7 +85,7 @@ function Hero() {
 
 export default function Home() {
   return (
-    <div className="dark:bg-none scene scene-wrapper">
+    <div className="dark:bg-none scene-wrapper bg-custom-gradient">
       <Canvas
         shadows
         frameloop="demand"
