@@ -1,22 +1,32 @@
 /* eslint-disable */
-import { ReactNode, VFC } from 'react'
+import React, { FC, ReactNode, useRef } from 'react'
 
 interface Props {
-  onClose: () => void
-  children: ReactNode
+  showModal: boolean
+  setShowModal: (showModal: boolean) => void
+  children?: ReactNode
 }
 
-const Modal: VFC<Props> = ({ children, onClose }) => {
+const Modal: FC<Props> = ({ showModal, setShowModal, children }) => {
+  const modalRef = useRef(null)
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div
-        className="fixed inset-0 bg-black opacity-50 transition-opacity"
-        onClick={onClose}
-      ></div>
-      <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full md:w-2/3 p-8">
-        {children}
-      </div>
-    </div>
+    <>
+      {showModal ? (
+        <>
+          <div
+            className="modal-wrapper"
+            ref={modalRef}
+            onClick={(e) => {
+              modalRef.current === e.target && setShowModal(false)
+            }}
+          >
+            {children}
+          </div>
+          <div className="fixed inset-0 z-40 bg-black opacity-25" />
+        </>
+      ) : null}
+    </>
   )
 }
 

@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from '../common/Modal'
 
 const ImageSlider = ({ data, index, positionIndexes }: any) => {
+  const [show, setShow] = useState(false)
   const imgSrc = data.cover?.file?.url || data.cover?.external?.url
   const projectTitle = data.properties.name.title[0].plain_text
 
@@ -15,18 +17,28 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
     right1: { x: '50%', scale: 0.7, zIndex: 3 },
   }
 
+  const handleImageClick = () => {
+    setShow(true)
+  }
+
   return (
-    <motion.img
-      key={index}
-      src={imgSrc}
-      alt={projectTitle}
-      className="rounded-[12px]"
-      initial="center"
-      animate={positions[positionIndexes[index]]}
-      variants={imageVariants}
-      transition={{ duration: 0.5 }}
-      style={{ width: '20%', position: 'absolute', height: '40%' }}
-    />
+    <>
+      <motion.img
+        key={index}
+        src={imgSrc}
+        alt={projectTitle}
+        className="rounded-[12px]"
+        initial="center"
+        animate={positions[positionIndexes[index]]}
+        variants={imageVariants}
+        transition={{ duration: 0.5 }}
+        style={{ width: '20%', position: 'absolute', height: '40%' }}
+        onClick={handleImageClick}
+      />
+      <Modal showModal={show} setShowModal={setShow}>
+        <div>hi</div>
+      </Modal>
+    </>
   )
 }
 

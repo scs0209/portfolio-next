@@ -67,3 +67,8 @@
   animation: mulShdSpin 1.1s infinite ease;
   transform: translateZ(0);
 }
+
+/* Modal */
+.modal-wrapper {
+  @apply absolute inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none focus:outline-none;
+}
