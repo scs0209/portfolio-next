@@ -2,12 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { HiHome, HiUser } from 'react-icons/hi'
-import {
-  HiChatBubbleBottomCenterText,
-  HiEnvelope,
-  HiRectangleGroup,
-  HiViewColumns,
-} from 'react-icons/hi2'
+import { HiEnvelope, HiRectangleGroup, HiViewColumns } from 'react-icons/hi2'
 
 const navData = [
   { name: 'home', path: '/', icon: <HiHome /> },
@@ -18,11 +13,6 @@ const navData = [
     icon: <HiRectangleGroup />,
   },
   { name: 'work', path: '/work', icon: <HiViewColumns /> },
-  {
-    name: 'testimonials',
-    path: '/testimonials',
-    icon: <HiChatBubbleBottomCenterText />,
-  },
   {
     name: 'contact',
     path: '/contact',

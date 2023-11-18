@@ -5,6 +5,7 @@ import HeadInfo from '@/components/common/HeadInfo'
 import SvgIcons from '@/components/contact/svg'
 import { Avatar } from 'flowbite-react'
 import Link from 'next/link'
+import Bauble from '@/components/projects/Baubble'
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -33,7 +34,8 @@ const Contact = () => {
   return (
     <>
       <HeadInfo title="Contact Me" />
-      <section className="flex text-gray-600 body-font relative max-w-screen-lx mx-auto my-0">
+      <Bauble />
+      <section className="flex text-gray-600 body-font relative max-w-screen-lx mx-auto my-0 pointer-events-none">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex w-2/3 justify-between mx-auto items-center">
             <div className="flex flex-col justify-start text-center w-full mb-12">
@@ -51,7 +53,7 @@ const Contact = () => {
               </p>
             </div>
           </div>
-          <div className="lg:w-1/2 md:w-2/3 mx-auto">
+          <div className="lg:w-1/2 md:w-2/3 mx-auto pointer-events-auto">
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">
                 <div className="relative">

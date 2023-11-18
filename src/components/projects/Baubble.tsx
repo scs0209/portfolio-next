@@ -1,7 +1,7 @@
 import React from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Environment, useTexture } from '@react-three/drei'
+import { Environment, Preload, useTexture, Outlines } from '@react-three/drei'
 import { Physics, useSphere } from '@react-three/cannon'
 import { EffectComposer, N8AO, SMAA } from '@react-three/postprocessing'
 
@@ -53,7 +53,14 @@ function Clump({
       args={[sphereGeometry, baubleMaterial, 40]}
       material-map={texture}
     >
-      {/* <Outlines thickness={outlines} /> */}
+      <Outlines
+        color="transparent"
+        screenspace
+        opacity={1} // 투명도를 높임
+        transparent
+        thickness={0}
+        angle={0}
+      />
     </instancedMesh>
   )
 }
@@ -75,7 +82,7 @@ function Pointer() {
 }
 
 const Bauble = () => (
-  <div className="fixed top-0 right-0 left-0 h-screen z-1 pointer-events-none">
+  <div className="fixed top-0 right-0 left-0 h-screen bg-[#dfdfdf] dark:bg-darkbg z-1 pointer-events-none ">
     <Canvas
       shadows
       gl={{ antialias: false }}
@@ -108,6 +115,7 @@ const Bauble = () => (
         />
         <SMAA />
       </EffectComposer>
+      <Preload all />
     </Canvas>
   </div>
 )
