@@ -6,6 +6,7 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
   const [show, setShow] = useState(false)
   const imgSrc = data.cover?.file?.url || data.cover?.external?.url
   const projectTitle = data.properties.name.title[0].plain_text
+  const description = data.properties.description.rich_text[0].plain_text
 
   const positions = ['center', 'left1', 'left', 'right', 'right1']
 
@@ -36,7 +37,7 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
         onClick={handleImageClick}
       />
       <Modal showModal={show} setShowModal={setShow}>
-        <div>hi</div>
+        {description}
       </Modal>
     </>
   )

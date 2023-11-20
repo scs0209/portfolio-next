@@ -21,7 +21,7 @@ const Modal: FC<Props> = ({ showModal, setShowModal, children }) => {
               modalRef.current === e.target && setShowModal(false)
             }}
           >
-            {children}
+            <div className="modal-content">{children}</div>
           </div>
           <div className="fixed inset-0 z-40 bg-black opacity-25" />
         </>

@@ -63,7 +63,7 @@ const aboutData = [
     title: 'qualifications',
     info: [
       {
-        title: '정보처리기사',
+        title: '정보처리기사 - PASS',
         stage: '2022.11',
       },
       {

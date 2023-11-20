@@ -21,6 +21,7 @@ module.exports = {
       },
       boxShadow: {
         neon: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff',
+        modal: '0 8px 32px 0 rgba(31,38,135,0.37)',
       },
       colors: {
         primary: '#131424',

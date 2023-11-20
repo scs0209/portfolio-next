@@ -72,3 +72,7 @@
 .modal-wrapper {
   @apply absolute inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none focus:outline-none;
 }
+
+.modal-content {
+  @apply bg-[rgba(250,249,249,0.45)] shadow-modal backdrop-blur-lg rounded-lg border border-[rgba(255,255,255,0.18)] h-[1000px] w-[1000px];
+}
