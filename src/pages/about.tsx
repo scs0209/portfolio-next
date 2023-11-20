@@ -126,28 +126,45 @@ const About = () => {
               )
             })}
           </div>
-          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
+          <div className="py-2 xl:py-6 flex flex-col justify-center xl:items-start">
             {aboutData[index].info.map((item, i) => {
               return (
-                <div
+                <ul
                   key={i}
-                  className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+                  className="flex-1 flex md:flex-row max-w-max gap-x-2 text-white/60"
                 >
-                  <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                  <div className="hidden md:flex">-</div>
-                  {/* @ts-ignore */}
-                  <div>{item?.stage}</div>
-                  <div className="flex gap-x-4">
-                    {/* @ts-ignore */}
-                    {item.icons?.map((icon, iconIndex) => {
-                      return (
-                        <div key={iconIndex} className="text-2xl text-white">
-                          {icon}
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
+                  <li className=" flex items-baseline gap-6 pb-5 relative">
+                    <div className="before:absolute before:left-[5.5px] before:h-full before:w-[1px] before:bg-gray-400">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        className="bi bi-circle-fill fill-gray-400"
+                        viewBox="0 0 16 16"
+                      >
+                        <circle cx="8" cy="8" r="8" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-light mb-2 md:mb-0">{item.title}</p>
+                      {/* @ts-ignore */}
+                      <p className="mt-2">{item?.stage}</p>
+                      <div className="flex gap-x-4">
+                        {/* @ts-ignore */}
+                        {item.icons?.map((icon, iconIndex) => {
+                          return (
+                            <div
+                              key={iconIndex}
+                              className="text-2xl text-white mt-2"
+                            >
+                              {icon}
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               )
             })}
           </div>
