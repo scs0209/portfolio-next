@@ -1,18 +1,13 @@
 /* eslint-disable */
 import React, { useState } from 'react'
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaWordpress,
-  FaFigma,
-} from 'react-icons/fa'
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma } from 'react-icons/fa'
 import {
   SiNextdotjs,
   SiFramer,
   SiAdobexd,
   SiAdobephotoshop,
+  SiRedux,
+  SiThreedotjs,
 } from 'react-icons/si'
 import { motion } from 'framer-motion'
 import ParticlesContainer from '@/components/About/ParticlesContainer'
@@ -32,7 +27,8 @@ const aboutData = [
           <FaReact />,
           <SiNextdotjs />,
           <SiFramer />,
-          <FaWordpress />,
+          <SiRedux />,
+          <SiThreedotjs />,
         ],
       },
       {
@@ -42,15 +38,15 @@ const aboutData = [
     ],
   },
   {
-    title: 'awards',
+    title: 'educations',
     info: [
       {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
+        title: 'Chemistry - Soon Chun Hyang univ, Asan',
+        stage: '2015.03 - 2022.08',
       },
       {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
+        title: 'pre onboarding education - Wanted Platform',
+        stage: '2023.06 - 2023.08',
       },
     ],
   },
@@ -58,33 +54,25 @@ const aboutData = [
     title: 'experience',
     info: [
       {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
-      },
-      {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
-      },
-      {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
+        title: 'Frontend Developer - Procyan.co',
+        stage: '2023.10 - current',
       },
     ],
   },
   {
-    title: 'credentials',
+    title: 'qualifications',
     info: [
       {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
+        title: '정보처리기사',
+        stage: '2022.11',
       },
       {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
+        title: 'TOEIC - 755',
+        stage: '2022.05',
       },
       {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
+        title: 'TOEIC Speaking Test - 140(IH)',
+        stage: '2023.11',
       },
     ],
   },
@@ -104,13 +92,23 @@ const About = () => {
           className="flex-1 flex flex-col justify-center"
         >
           <Animation />
+          <motion.h2
+            variants={fadeIn('right', 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="text-3xl font-bold"
+          >
+            Where technology meets creativity, I am a frontend developer
+            innovating the <span className="text-accent">user experience.</span>
+          </motion.h2>
         </motion.div>
         <motion.div
           variants={fadeIn('left', 0.4)}
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+          className="flex flex-col w-full xl:max-w-[48%] h-[800px] p-4 bg-white bg-opacity-25 rounded-xl border border-gray-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#fff,0_0_15px_#fff,0_0_30px_#fff] border-opacity-18 filter[blur-4px] backdrop-filter[blur-4px] overflow-y-auto"
         >
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
             {aboutData.map((item, i) => {
