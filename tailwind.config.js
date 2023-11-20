@@ -19,6 +19,9 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 6s linear infinite',
       },
+      boxShadow: {
+        neon: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff',
+      },
       colors: {
         primary: '#131424',
         secondary: '#393A47',

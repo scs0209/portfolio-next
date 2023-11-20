@@ -81,7 +81,7 @@ const aboutData = [
 const About = () => {
   const [index, setIndex] = useState(0)
   return (
-    <div className="bg-[#12131D] text-white text-center xl:text-left h-screen w-full">
+    <div className="bg-[#12131D] text-white text-center xl:text-left w-full overflow-auto h-screen">
       <ParticlesContainer />
       <div className="p-[15px] max-w-screen-lg mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         <motion.div
@@ -133,13 +133,13 @@ const About = () => {
                   key={i}
                   className="flex-1 flex md:flex-row max-w-max gap-x-2 text-white/60"
                 >
-                  <li className=" flex items-baseline gap-6 pb-5 relative">
-                    <div className="before:absolute before:left-[5.5px] before:h-full before:w-[1px] before:bg-gray-400">
+                  <li className="flex items-baseline gap-6 pb-5 relative">
+                    <div className="before:absolute before:left-[5.5px] before:h-full before:w-[1px] before:bg-gray-400 shadow-neon bg-transparent rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="12"
                         height="12"
-                        className="bi bi-circle-fill fill-gray-400"
+                        className="fill-white rounded-full z-10 relative"
                         viewBox="0 0 16 16"
                       >
                         <circle cx="8" cy="8" r="8" />
