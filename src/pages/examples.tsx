@@ -1,8 +1,6 @@
 /* eslint-disable */
 import axios from 'axios'
 import HeadInfo from '@/components/common/HeadInfo'
-import Qualification from '@/components/Main/Qualification'
-import Skill from '@/components/Main/Skill'
 import useToggle from '@/hooks/useToggle'
 import { DATABASE_ID, NOTION_TOKEN } from '../../config'
 import Projects from '@/components/projects/projects'
@@ -19,8 +17,6 @@ export default function Home({ projects }: any) {
       <HeadInfo title="Home" />
       <section className="text-gray-600 body-font dark:text-white">
         <Hero openQualification={openQualification} openSkill={openSkill} />
-        {showQualification && <Qualification onClose={closeQualification} />}
-        {showSkill && <Skill onClose={closeSkill} />}
       </section>
       <Projects projects={projects} />
       <Footer />
