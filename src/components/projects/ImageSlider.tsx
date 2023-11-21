@@ -66,18 +66,22 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
 
   return (
     <>
-      <motion.img
-        key={index}
-        src={imgSrc}
-        alt={projectTitle}
-        className="rounded-[12px]"
-        initial="center"
+      <motion.div
         animate={positions[positionIndexes[index]]}
+        initial="center"
         variants={imageVariants}
         transition={{ duration: 0.5 }}
         style={{ width: '20%', position: 'absolute', height: '40%' }}
         onClick={handleImageClick}
-      />
+      >
+        <motion.img
+          key={index}
+          src={imgSrc}
+          alt={projectTitle}
+          className="rounded-[12px]"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      </motion.div>
       <Modal showModal={show} setShowModal={setShow}>
         {renderPageContent()}
       </Modal>
