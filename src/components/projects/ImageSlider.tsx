@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Modal from '../common/Modal'
 
 const ImageSlider = ({ data, index, positionIndexes }: any) => {
+  console.log(data)
   const [show, setShow] = useState(false)
   const imgSrc = data.cover?.file?.url || data.cover?.external?.url
   const projectTitle = data.properties.name.title[0].plain_text
@@ -22,6 +23,47 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
     setShow(true)
   }
 
+  const renderPageContent = () => {
+    return data.pageContent.results.map((block: any) => {
+      switch (block.type) {
+        case 'paragraph':
+          return (
+            <div className="mb-2 leading-normal tracking-wide p-3">
+              {block.paragraph.rich_text[0]?.plain_text || ''}
+            </div>
+          )
+        case 'heading_1':
+          return (
+            <h1 className="text-3xl font-bold mb-2">
+              {block.heading_1.text[0]?.plain_text || ''}
+            </h1>
+          )
+        case 'heading_2':
+          return (
+            <h2 className="text-2xl font-bold mb-2">
+              {block.heading_2.rich_text[0]?.plain_text || ''}
+            </h2>
+          )
+        case 'heading_3':
+          return (
+            <h3 className="text-xl font-bold mb-2">
+              {block.heading_3.rich_text[0]?.plain_text || ''}
+            </h3>
+          )
+        case 'bulleted_list_item':
+          return (
+            <li className="pl-4 mb-2">
+              {block.bulleted_list_item.rich_text[0]?.plain_text || ''}
+            </li>
+          )
+        case 'divider':
+          return <hr className="mb-2" />
+        default:
+          return null
+      }
+    })
+  }
+
   return (
     <>
       <motion.img
@@ -37,7 +79,7 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
         onClick={handleImageClick}
       />
       <Modal showModal={show} setShowModal={setShow}>
-        {description}
+        {renderPageContent()}
       </Modal>
     </>
   )

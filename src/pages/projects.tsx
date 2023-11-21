@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Suspense } from 'react'
 import axios from 'axios'
 import { Canvas } from '@react-three/fiber'
@@ -40,10 +41,9 @@ export async function getStaticProps() {
     method: 'POST',
     url: `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
     headers: {
-      accept: 'application/json',
+      Authorization: `Bearer ${NOTION_TOKEN}`,
       'Notion-Version': '2022-06-28',
       'content-type': 'application/json',
-      Authorization: `${NOTION_TOKEN}`,
     },
     data: {
       sorts: [
@@ -60,10 +60,31 @@ export async function getStaticProps() {
 
   try {
     const response = await axios.request(options)
-    projects = await response.data
+    projects = response.data.results
   } catch (error) {
     console.error(error)
   }
+
+  const fetchPageContents = projects.map(async (project: any) => {
+    const pageId = project.id
+    const pageOptions = {
+      method: 'GET',
+      url: `https://api.notion.com/v1/blocks/${pageId}/children`,
+      headers: {
+        Authorization: `Bearer ${NOTION_TOKEN}`,
+        'Notion-Version': '2022-06-28',
+      },
+    }
+
+    try {
+      const pageResponse = await axios.request(pageOptions)
+      project.pageContent = pageResponse.data
+    } catch (error) {
+      console.error(error)
+    }
+  })
+
+  await Promise.all(fetchPageContents)
 
   return {
     props: { projects },

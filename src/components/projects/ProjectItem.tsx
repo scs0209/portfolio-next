@@ -25,7 +25,7 @@ const ProjectItem: FC<Props> = ({ projects }) => {
 
   return (
     <div className="flex items-center flex-col justify-center h-screen relative z-10">
-      {projects.results.map((project: any, index: number) => {
+      {projects.map((project: any, index: number) => {
         return (
           <ImageSlider
             data={project}
