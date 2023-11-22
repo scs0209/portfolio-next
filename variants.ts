@@ -25,3 +25,11 @@ export const fadeIn = (direction: Direction, delay: number) => {
     },
   }
 }
+
+export const imageVariants = {
+  center: { x: '0%', scale: 1, zIndex: 5 },
+  left1: { x: '-50%', scale: 0.7, zIndex: 3 },
+  left: { x: '-90%', scale: 0.5, zIndex: 2 },
+  right: { x: '90%', scale: 0.5, zIndex: 1 },
+  right1: { x: '50%', scale: 0.7, zIndex: 3 },
+}

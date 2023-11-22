@@ -3,16 +3,9 @@ import React, { useState } from 'react'
 import Modal from '../common/Modal'
 import { Tag } from '@/types'
 import ProjectTag from './project-tag'
+import { imageVariants } from '../../../variants'
 
 const positions = ['center', 'left1', 'left', 'right', 'right1']
-
-const imageVariants = {
-  center: { x: '0%', scale: 1, zIndex: 5 },
-  left1: { x: '-50%', scale: 0.7, zIndex: 3 },
-  left: { x: '-90%', scale: 0.5, zIndex: 2 },
-  right: { x: '90%', scale: 0.5, zIndex: 1 },
-  right1: { x: '50%', scale: 0.7, zIndex: 3 },
-}
 
 const diffDate = (start: any, end: any) => {
   const startDateStringArray = start.split('-')
@@ -57,7 +50,7 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
   }
 
   const animateCardBody = isHovered
-    ? { height: '100px', opacity: 1 }
+    ? { height: '170px', opacity: 1 }
     : { height: 'auto', opacity: 0 }
 
   const transition = {
@@ -116,7 +109,11 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
         variants={imageVariants}
         transition={{ duration: 0.5 }}
         className="overflow-hidden absolute bg-[#343444] rounded-[12px] p-4"
-        style={{ width: '20%', height: '40%' }}
+        style={{
+          width: '20%',
+          height: '40%',
+          boxShadow: '0 0 10px 10px rgba(255, 255, 255, 0.3)',
+        }}
         onClick={handleImageClick}
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
