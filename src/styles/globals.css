@@ -96,3 +96,7 @@
 .modal-content {
   @apply bg-[rgba(250,249,249,0.45)] shadow-modal backdrop-blur-lg rounded-lg border border-[rgba(255,255,255,0.18)] h-[700px] w-[1000px] p-4 overflow-y-auto;
 }
+
+.github-badge {
+  @apply px-3 py-0.5 text-sm rounded-lg text-white border bg-gray-500 border-gray-500 hover:bg-gray-400 dark:border-gray-500 dark:bg-gray-500 dark:hover:text-black dark:hover:border-black;
+}

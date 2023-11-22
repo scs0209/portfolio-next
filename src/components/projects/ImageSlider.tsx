@@ -4,9 +4,43 @@ import Modal from '../common/Modal'
 import { Tag } from '@/types'
 import ProjectTag from './project-tag'
 
+const positions = ['center', 'left1', 'left', 'right', 'right1']
+
+const imageVariants = {
+  center: { x: '0%', scale: 1, zIndex: 5 },
+  left1: { x: '-50%', scale: 0.7, zIndex: 3 },
+  left: { x: '-90%', scale: 0.5, zIndex: 2 },
+  right: { x: '90%', scale: 0.5, zIndex: 1 },
+  right1: { x: '50%', scale: 0.7, zIndex: 3 },
+}
+
+const diffDate = (start: any, end: any) => {
+  const startDateStringArray = start.split('-')
+  const endDateStringArray = end.split('-')
+
+  const startDate = new Date(
+    startDateStringArray[0],
+    startDateStringArray[1],
+    startDateStringArray[2],
+  )
+  const endDate = new Date(
+    endDateStringArray[0],
+    endDateStringArray[1],
+    endDateStringArray[2],
+  )
+
+  const diffInMs = Math.abs(Number(endDate) - Number(startDate))
+  const result = diffInMs / (1000 * 60 * 60 * 24)
+  if (Number.isNaN(result)) {
+    return '작업 중'
+  }
+
+  return `${result}일`
+}
+
 const ImageSlider = ({ data, index, positionIndexes }: any) => {
-  console.log(data)
   const [show, setShow] = useState(false)
+  const [isHovered, setIsHover] = useState(false)
   const imgSrc = data.cover?.file?.url || data.cover?.external?.url
   const githubLink = data.properties.github.url
   const projectTitle = data.properties.name.title[0].plain_text
@@ -18,42 +52,19 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
     end = '작업 중'
   }
 
-  const diffDate = (start: any, end: any) => {
-    const startDateStringArray = start.split('-')
-    const endDateStringArray = end.split('-')
-
-    const startDate = new Date(
-      startDateStringArray[0],
-      startDateStringArray[1],
-      startDateStringArray[2],
-    )
-    const endDate = new Date(
-      endDateStringArray[0],
-      endDateStringArray[1],
-      endDateStringArray[2],
-    )
-
-    const diffInMs = Math.abs(Number(endDate) - Number(startDate))
-    const result = diffInMs / (1000 * 60 * 60 * 24)
-    if (Number.isNaN(result)) {
-      return '작업 중'
-    }
-
-    return `${result}일`
-  }
-
-  const positions = ['center', 'left1', 'left', 'right', 'right1']
-
-  const imageVariants = {
-    center: { x: '0%', scale: 1, zIndex: 5 },
-    left1: { x: '-50%', scale: 0.7, zIndex: 3 },
-    left: { x: '-90%', scale: 0.5, zIndex: 2 },
-    right: { x: '90%', scale: 0.5, zIndex: 1 },
-    right1: { x: '50%', scale: 0.7, zIndex: 3 },
-  }
-
   const handleImageClick = () => {
     setShow(true)
+  }
+
+  const animateCardBody = isHovered
+    ? { height: '100px', opacity: 1 }
+    : { height: 'auto', opacity: 0 }
+
+  const transition = {
+    duration: 0.25,
+    type: 'spring',
+    bounce: 0.2,
+    ease: 'easeIn',
   }
 
   const renderPageContent = () => {
@@ -107,29 +118,38 @@ const ImageSlider = ({ data, index, positionIndexes }: any) => {
         className="overflow-hidden absolute bg-[#343444] rounded-[12px] p-4"
         style={{ width: '20%', height: '40%' }}
         onClick={handleImageClick}
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
       >
         <motion.img
           key={index}
           src={imgSrc}
           alt={projectTitle}
-          className="rounded-[12px] overflow-hidden"
-          style={{ width: '100%', height: '70%', objectFit: 'cover' }}
+          className="rounded-[12px] overflow-hidden mb-4"
+          style={{ width: '100%', objectFit: 'cover' }}
+          animate={{ height: isHovered ? '50%' : '100%' }}
         />
-        <span className="text-sm">
-          {`${start} ~ ${end}`} (총: {diffDate(start, end)})
-        </span>
-        <div>{projectTitle}</div>
-        <div className="text-sm">{description}</div>
-        <a href={githubLink} target="_blank" className="mt-3 mb-2">
-          <span className="px-3 py-0.5 text-sm fond-medium rounded-lg text-white border bg-gray-500 border-gray-500 hover:bg-pink-400 dark:border-gray-500 dark:bg-gray-500 dark:hover:text-black dark:hover:border-black">
-            Github
-          </span>
-        </a>
-        <div className="flex flex-row flex-wrap">
-          {tags.map((tag: Tag) => {
-            return <ProjectTag key={tag.id} tag={tag} />
-          })}
-        </div>
+        <motion.div
+          className="bg-[#343444] gap-4"
+          animate={animateCardBody}
+          transition={transition}
+        >
+          <div className="flex justify-between items-center align-middle mb-2">
+            <span className="text-xl font-bold">{projectTitle}</span>
+            <span className="text-xs font-semibold">
+              {`${start} ~ ${end}`} (총: {diffDate(start, end)})
+            </span>
+          </div>
+          <div className="text-sm mt-2 mb-2">{description}</div>
+          <a href={githubLink} target="_blank" className="mt-3 mb-2">
+            <span className="github-badge">Github</span>
+          </a>
+          <div className="flex flex-row flex-wrap">
+            {tags.map((tag: Tag) => {
+              return <ProjectTag key={tag.id} tag={tag} />
+            })}
+          </div>
+        </motion.div>
       </motion.div>
       <Modal showModal={show} setShowModal={setShow}>
         {renderPageContent()}
