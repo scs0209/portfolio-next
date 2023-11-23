@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Environment, Preload, useTexture, Outlines } from '@react-three/drei'
 import { Physics, useSphere } from '@react-three/cannon'
 import { EffectComposer, N8AO, SMAA } from '@react-three/postprocessing'
+import CanvasLoader from '../Loader'
 
 const rfs = THREE.MathUtils.randFloatSpread
 const sphereGeometry = new THREE.SphereGeometry(1, 32, 32)
@@ -99,23 +100,25 @@ const Bauble = () => (
         castShadow
         shadow-mapSize={[512, 512]}
       />
-      <Physics gravity={[0, 2, 0]} iterations={10}>
-        <Pointer />
-        <Clump />
-      </Physics>
-      <Environment files="/adamsbridge.hdr" />
-      <EffectComposer disableNormalPass multisampling={0}>
-        <N8AO
-          halfRes
-          color="black"
-          aoRadius={2}
-          intensity={1}
-          aoSamples={6}
-          denoiseSamples={4}
-        />
-        <SMAA />
-      </EffectComposer>
-      <Preload all />
+      <Suspense fallback={<CanvasLoader />}>
+        <Physics gravity={[0, 2, 0]} iterations={10}>
+          <Pointer />
+          <Clump />
+        </Physics>
+        <Environment files="/adamsbridge.hdr" />
+        <EffectComposer disableNormalPass multisampling={0}>
+          <N8AO
+            halfRes
+            color="black"
+            aoRadius={2}
+            intensity={1}
+            aoSamples={6}
+            denoiseSamples={4}
+          />
+          <SMAA />
+        </EffectComposer>
+        <Preload all />
+      </Suspense>
     </Canvas>
   </div>
 )
