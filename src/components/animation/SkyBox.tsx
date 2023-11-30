@@ -1,26 +1,20 @@
-import { useGLTF } from '@react-three/drei'
-import { useFrame, useThree } from '@react-three/fiber'
-import React, { useEffect, useRef } from 'react'
+import { useThree } from '@react-three/fiber'
+
+import { CubeTextureLoader } from 'three'
 
 const SkyBox = () => {
   const { scene } = useThree()
-  const gltf = useGLTF('./background/scene.gltf', true)
-  const ref = useRef<any>()
-
-  useEffect(() => {
-    if (gltf.scene) {
-      scene.background = null
-      ref.current.add(gltf.scene)
-    }
-  }, [gltf, scene])
-
-  useFrame(({ camera }) => {
-    if (ref.current) {
-      ref.current.rotation.copy(camera.rotation)
-    }
-  })
-
-  return <group ref={ref} />
+  const loader = new CubeTextureLoader()
+  const texture = loader.load([
+    './Yokohama3/material_emissive.png',
+    './Yokohama3/material_emissive.png',
+    './Yokohama3/material_emissive.png',
+    './Yokohama3/material_emissive.png',
+    './Yokohama3/material_emissive.png',
+    './Yokohama3/material_emissive.png',
+  ])
+  scene.background = texture
+  return null
 }
 
 export default SkyBox

@@ -123,10 +123,10 @@ export default function Home() {
             color="#fff3b0"
           />
           <Hero />
+          <SkyBox />
           <Preload all />
         </Suspense>
 
-        <SkyBox />
         <ambientLight intensity={1} color="#dee2ff" />
       </Canvas>
 
