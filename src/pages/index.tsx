@@ -7,6 +7,7 @@ import {
   Sparkles,
   useMatcapTexture,
   Preload,
+  Environment,
 } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Physics } from '@react-three/cannon'
