@@ -7,7 +7,6 @@ import {
   Sparkles,
   useMatcapTexture,
   Preload,
-  Environment,
 } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Physics } from '@react-three/cannon'
@@ -15,7 +14,6 @@ import { Vector3 } from 'three'
 import ProjectBtn from '@/components/Main/ProjectBtn'
 import Earth from '@/components/animation/Earth'
 import CanvasLoader from '@/components/Loader'
-import SkyBox from '@/components/animation/SkyBox'
 
 function CircularText({ text, radius, rotationSpeed, matcapTexture }: any) {
   const groupRef = useRef<any>()
@@ -124,7 +122,6 @@ export default function Home() {
             color="#fff3b0"
           />
           <Hero />
-          <SkyBox />
           <Preload all />
         </Suspense>
 
