@@ -14,6 +14,7 @@ import { Vector3 } from 'three'
 import ProjectBtn from '@/components/Main/ProjectBtn'
 import Earth from '@/components/animation/Earth'
 import CanvasLoader from '@/components/Loader'
+import SkyBox from '@/components/animation/SkyBox'
 
 function CircularText({ text, radius, rotationSpeed, matcapTexture }: any) {
   const groupRef = useRef<any>()
@@ -118,10 +119,11 @@ export default function Home() {
             size={3}
             speed={0.02}
             opacity={1}
-            scale={10}
+            scale={20}
             color="#fff3b0"
           />
           <Hero />
+          <SkyBox />
           <Preload all />
         </Suspense>
 
