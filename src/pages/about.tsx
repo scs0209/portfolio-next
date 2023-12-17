@@ -1,14 +1,7 @@
 /* eslint-disable */
 import React, { useState } from 'react'
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma } from 'react-icons/fa'
-import {
-  SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
-  SiRedux,
-  SiThreedotjs,
-} from 'react-icons/si'
+import { FaHtml5, FaCss3, FaJs, FaReact } from 'react-icons/fa'
+import { SiNextdotjs, SiFramer, SiRedux, SiThreedotjs } from 'react-icons/si'
 import { motion } from 'framer-motion'
 import ParticlesContainer from '@/components/About/ParticlesContainer'
 import Animation from '@/components/Main/Animation'
@@ -30,10 +23,6 @@ const aboutData = [
           <SiRedux />,
           <SiThreedotjs />,
         ],
-      },
-      {
-        title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
       },
     ],
   },
